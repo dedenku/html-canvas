@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .particle-quantity {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="myCanvas" style="width: 300; height: 200; border: 1px solid #000;"></canvas>
+
+    <div class="particle-quantity">
+        <label for="quantity">Particles:</label>
+        <input type="number" id="quantity" name="quantity" min="1">
+    </div>
+
+    <script src="./canvas.js"></script>
+</body>
+
+</html>

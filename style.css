@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 750px;
+  height: 200px;
+  /* padding: 30px 90px; */
+  background-color: rgb(233, 233, 233);
+  margin-bottom: 50px;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.header a{
+  position: relative;
+  transform: translateY(20px);
+}
+
+.github{
+  width: 60px;
+  height: 60px;
+  border: 5px solid white;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* top: 0; */
+  bottom: 0;
+  svg{
+    height: 50px;
+    text-decoration: none;
+    color: #000;
+  }
+
+  
+}
+
+.github i{
+  position: absolute;
+  offset: 0;
+}
+
+.github i::before{
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: green;
+  top: 22px;
+  left: -16px;
+  border-bottom-right-radius: 20px;
+  box-shadow: -3px -3px white;
+}
+
+h1 {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 50px 40px;
+
+  .html {
+    color: rgb(255, 115, 0);
+  }
+  .css {
+    color: rgb(0, 153, 255);
+  }
+  .js {
+    color: rgb(255, 217, 0);
+  }
+}
+
+.list-container {
+  width: 50%;
+  margin-bottom: 25px;
+}
+
+ol {
+  /* background-color: antiquewhite; */
+  columns: 2;
+  column-gap: 8rem;
+}
+
+li {
+  font-family: "Poppins", serif;
+  letter-spacing: 0.1rem;
+  transition: 0.5s;
+}
+li a {
+  text-decoration: none;
+  color: #000;
+}
+
+li:hover {
+  transform: scale(1.1);
+}
+
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .header {
+    width: 100%;
+  }
+  ol {
+    columns: 1;
+  }
+  .list-container {
+    width: 70%;
+  }
+}
