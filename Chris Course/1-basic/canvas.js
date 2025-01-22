@@ -34,15 +34,27 @@ window.addEventListener('mousemove', function (e) {
 window.addEventListener('touchmove', function (e) {
     touch.x = e.changedTouches[0].screenX;
     touch.y = e.changedTouches[0].screenY;
-    console.log(touch.x, touch.y)
+    // console.log(touch.x, touch.y)
+})
+window.addEventListener('touchend', function (e) {
+    touch.x = undefined;
+    touch.y = undefined;
+    // console.log(touch.x, touch.y)
 })
 
 
 let circles = [];
 
+// window resize
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    renderParticle();
+    particleInput.value = particleCount;
+})
+
 const maxRadius = 40;
-const minRadius = 2;
-const rad = minRadius;
+// const minRadius = 2;
 
 particleInput.addEventListener('input', () => {
     // Konversi nilai input ke number
@@ -62,7 +74,6 @@ particleInput.addEventListener('input', () => {
 
     // Update jumlah partikel
     particleCount = value;
-    circles = [];
     renderParticle();
 
 })
@@ -73,6 +84,7 @@ function Circle(x, y, dx, dy, rad) {
     this.dx = dx;
     this.dy = dy;
     this.rad = rad;
+    this.minRad = rad;
 
     const R = Math.floor(Math.random() * 256);
     const G = Math.floor(Math.random() * 256);
@@ -106,7 +118,7 @@ function Circle(x, y, dx, dy, rad) {
             if (this.rad < maxRadius) {
                 this.rad += 1;
             }
-        } else if (this.rad > minRadius) {
+        } else if (this.rad > this.minRad) {
             this.rad -= 1;
         }
 
@@ -115,11 +127,13 @@ function Circle(x, y, dx, dy, rad) {
 }
 
 function renderParticle() {
+    circles = [];
     for (let i = 0; i < particleCount; i++) {
+        let rad = (Math.floor(Math.random() * 5)) + 1;
         let x = Math.random() * (innerWidth - rad * 2) + rad;
-        let dx = (Math.random() - 0.5) * 2;
+        let dx = (Math.random() - 0.5) * 3;
         let y = Math.random() * (innerHeight - rad * 2) + rad;
-        let dy = (Math.random() - 0.5) * 2;
+        let dy = (Math.random() - 0.5) * 3;
         circles.push(new Circle(x, y, dx, dy, rad));
     }
 }
