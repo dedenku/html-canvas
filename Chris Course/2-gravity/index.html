@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravity</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        p {
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin: 10px;
+            color: rgba(0, 0, 0, 0.4);
+            font-size: 1rem;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="my-canvas"></canvas>
+
+    <p>
+        Click or tap to restart simulation
+    </p>
+
+    <script src="./canvas.js"></script>
+</body>
+
+</html>
